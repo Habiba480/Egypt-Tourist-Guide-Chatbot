@@ -22,10 +22,20 @@ The chatbot supports both **retrieval-augmented generation (RAG)** from a local 
 
 ```
 egypt_guide_chatbot/
-├── egypt_rag_guide.txt           # Source document for vector search
-├── main_app.py                   # Main Streamlit application script
-├── .env                          # API keys and environment variables
-├── requirements.txt              # Python dependencies
+│
+├── app.py                   # Main Streamlit app
+├── requirements.txt         # Dependencies
+├── .env                     # SerpAPI key and other secrets
+├── README.md                # Project documentation
+│
+└── src/
+    ├── __init__.py
+    ├── config.py            # Constants, prompt, API keys
+    ├── knowledge_base.py    # Load, process, embed documents
+    ├── retriever.py         # LLM + Retrieval pipeline
+    ├── search.py            # SerpAPI fallback logic
+    ├── state.py             # Session state management
+    ├── ui.py                # Chat UI logic
 ```
 
 ---
